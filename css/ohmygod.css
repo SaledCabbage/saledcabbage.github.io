@@ -1,0 +1,43 @@
+.col-xs-4{
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.col-xs-4 a{
+	margin-bottom: 0px;
+}
+
+.container {
+	margin-top: 40px;
+}
+
+.gallery > div {
+  position: relative;
+  float: left;
+  padding: 5px;
+}
+
+.gallery > div img {
+  transition: .1s transform;
+  transform: translateZ(0);
+  /* hack */
+}
+
+.gallery > div:hover {
+  z-index: 1;
+}
+
+.gallery > div:hover img {
+  transform: scale(1.5, 1.5);
+  transition: .3s transform;
+}
+
+.cf:before, .cf:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+
+.cf:after {
+  clear: both;
+}
