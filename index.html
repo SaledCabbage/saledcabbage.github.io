@@ -1,73 +1,111 @@
-
-<!DOCTYPE HTML>
 <html>
 <head>
-	<title>世界上最美的女人，是乐乐</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="keywords" content="礼物，惊喜,有趣,最美" />
-	<meta name="description" content="世界上最美的女人，是乐乐，但是她不喜欢我 ಥ_ಥ " />
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-	<link href="css/ohmygod.css" rel="stylesheet" type="text/css"/>
+<meta charset="utf-8">
+<title>照片背景色设置</title>
+<meta name="robots" content="nofollow" />
+<link href="http://cdn.bootcss.com/jquery-minicolors/2.2.4/jquery.minicolors.min.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script src="http://cdn.bootcss.com/jquery-minicolors/2.2.4/jquery.minicolors.min.js"></script>
+<!-- 新 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
 
+<!-- 可选的Bootstrap主题文件（一般不用引入） -->
+<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<style>
+	*,html,h1,h2,h3,h4,div,span,p,input,label{
+		font-family: Arial,"微软雅黑","Microsoft-YaHei","黑体";
+	}
+	h2{
+		color: #fff;
+		text-shadow: 1px 1px 2px #000;
+	}
+	body{
+		padding:40px;
+		background: url('http://zhangzifan.com/bing') center center no-repeat;
+	}
+</style>
 </head>
 <body>
-	<div class="container">
-		<div class="row gallery">
-			<div class="col-xs-4 col-md-4">
-				<a href="javascript:void(0);">
-					<img src="img/1.jpg" alt="..." class="img-responsive center-block">
-				</a>
+<header>
+<h2 class="text-center">照片修改工具 V1.2</h2>
+</header>
+<div class="container-fluid">
+	<div class="row">
+		<div id="forms" class="forms">
+			<form method="get" action="http://smallest.com.cn/czq/photo/">
+			<div class="col-xs-12 col-md-10 col-lg-4 col-md-offset-1 col-lg-offset-4">
+				<div class="alert alert-warning alert-dismissible">
+					<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+					<span class="glyphicon glyphicon-exclamation-sign"></span>此工具仅限指定人员使用，他人请勿随意尝试！
+				</div>
+				<div class="panel panel-info">
+					<div class="panel-heading"><span class="glyphicon glyphicon-pencil"></span><b>&nbsp;请选择照片背景颜色</b></div>
+					<div class="panel-body">
+					<div class="form-group">
+					<input name="colorset" type="text" id="color" class="form-control" /></div>
+					<div class="form-group text-center btn-group" data-toggle="buttons"  style="display: table; width: auto;margin-left: auto;
+margin-right: auto;">
+						<label class="btn btn-primary active"><input type="radio" name="typetag" autocomplete="off" value="0" checked="checked" id="view">查看</label>
+						<label class="btn btn-primary"><input type="radio" name="typetag" autocomplete="off" value="1" id="download">下载</label>
+					</div>
+					<div class="form-group text-center">
+					<input type="submit" class="btn btn-info"  value="确认" /></div>	
+					</div>
+				</div>
 			</div>
-			<div class="col-xs-4 col-md-4">
-				<a href="javascript:void(0);">
-					<img src="img/2.jpg" alt="..." class="img-responsive center-block">
-				</a>
-			</div>
-			<div class="col-xs-4 col-md-4">
-				<a href="javascript:void(0);">
-					<img src="img/3.jpg" alt="..." class="img-responsive center-block">
-				</a>
-			</div>
-		</div>
-		<div class="row gallery">
-			<div class="col-xs-4 col-md-4">
-				<a href="javascript:void(0);">
-					<img src="img/4.jpg" alt="..." class="img-responsive center-block">
-				</a>
-			</div>
-			<div class="col-xs-4 col-md-4">
-				<a href="zhaopian.html">
-					<img src="img/5.jpg" alt="..." class="img-responsive center-block">
-				</a>
-			</div>
-			<div class="col-xs-4 col-md-4">
-				<a href="javascript:void(0);">
-					<img src="img/6.jpg" alt="..." class="img-responsive center-block">
-				</a>
-			</div>
-		</div>
-		<div class="row gallery">
-			<div class="col-xs-4 col-md-4">
-				<a href="javascript:void(0);">
-					<img src="img/7.jpg" alt="..." class="img-responsive center-block">
-				</a>
-			</div>
-			<div class="col-xs-4 col-md-4">
-				<a href="javascript:void(0);">
-					<img src="img/8.jpg" alt="..." class="img-responsive center-block">
-				</a>
-			</div>
-			<div class="col-xs-4 col-md-4">
-				<a href="javascript:void(0);">
-					<img src="img/9.jpg" alt="..." class="img-responsive center-block">
-				</a>
-			</div>
-		</div>
-		<p class="text-center text-info bg-info">点击中间照片进入照片背景色设置工具</p>
+		</div>	
+	</form>
 	</div>
-	<div class="hidden">
-		<script src="https://s95.cnzz.com/z_stat.php?id=1254462802&web_id=1254462802" language="JavaScript"></script>
+	<div class="row text-right">
+		<span class="glyphicon glyphicon-info-sign" id="note" data-toggle="popover" title="Bing今日壁纸" data-placement="left" data-content="Bing今日壁纸简介"></span>
 	</div>
+</div>
+<footer class="navbar-fixed-bottom text-center bg-info">&copy; smallest.com.cn</footer>
+<script type="text/javascript">
+	$('input#color').minicolors({defaultValue:'#eb0028',inline:false,control:"wheel",position:'center left',theme:'bootstrap'});
+	$(function(){$("[data-toggle='popover']").popover();});
+	//必应壁纸设置
+	function load_bing() {
+  var data = {
+    title  : localStorage.getItem('bing_title') ? localStorage.getItem('bing_title') : '',
+    desc : localStorage.getItem('bing_desc') ? localStorage.getItem('bing_desc') : '',
+    date : localStorage.getItem('bing_date') ? localStorage.getItem('bing_date') : ''
+  };
+
+  if (new Date().getDate() == data.date & data.title != '' & data.desc != '') {
+  	$("#note").attr({"title":"Bing今日壁纸："+data.title,"data-content":data.desc});
+  } else {
+    var xmlhttp;
+    if (window.XMLHttpRequest) {
+      xmlhttp=new XMLHttpRequest();
+    } else {
+      xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.onreadystatechange = function() {
+      if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+        if (data.title.length > data.desc.length) {
+          title = data.desc;
+          desc = data.title;
+        } else {
+          title = data.title;
+          desc = data.desc;
+        }
+  	$("#note").attr({"title":"Bing今日壁纸："+data.title,"data-content":data.desc});
+
+        localStorage.setItem('bing_title', title);
+        localStorage.setItem('bing_desc', desc);
+        localStorage.setItem('bing_date', new Date().getDate());
+      }
+    }
+    xmlhttp.open("GET","http://smallest.com.cn/api/bing.php",true);
+    xmlhttp.send();
+  }
+}
+load_bing();
+</script>
 </body>
 </html>
