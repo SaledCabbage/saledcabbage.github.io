@@ -47,7 +47,8 @@
 					<div class="panel-body">
 					<div class="form-group">
 					<input name="colorset" type="text" id="color" class="form-control" /></div>
-					<div class="form-group text-center btn-group" data-toggle="buttons">
+					<div class="form-group text-center btn-group" data-toggle="buttons"  style="display: table; width: auto;margin-left: auto;
+margin-right: auto;">
 						<label class="btn btn-primary active"><input type="radio" name="typetag" autocomplete="off" value="0" checked="checked" id="view">查看</label>
 						<label class="btn btn-primary"><input type="radio" name="typetag" autocomplete="off" value="1" id="download">下载</label>
 					</div>
@@ -59,10 +60,52 @@
 		</div>	
 	</form>
 	</div>
+	<div class="row text-right">
+		<span class="glyphicon glyphicon-info-sign" id="note" data-toggle="popover" title="Bing今日壁纸" data-placement="left" data-content="Bing今日壁纸简介"></span>
+	</div>
 </div>
 <footer class="navbar-fixed-bottom text-center bg-info">&copy; smallest.com.cn</footer>
 <script type="text/javascript">
 	$('input#color').minicolors({defaultValue:'#eb0028',inline:false,control:"wheel",position:'center left',theme:'bootstrap'});
+	$(function(){$("[data-toggle='popover']").popover();});
+	//必应壁纸设置
+	function load_bing() {
+  var data = {
+    title  : localStorage.getItem('bing_title') ? localStorage.getItem('bing_title') : '',
+    desc : localStorage.getItem('bing_desc') ? localStorage.getItem('bing_desc') : '',
+    date : localStorage.getItem('bing_date') ? localStorage.getItem('bing_date') : ''
+  };
+
+  if (new Date().getDate() == data.date & data.title != '' & data.desc != '') {
+  	$("#note").attr({"title":"Bing今日壁纸："+data.title,"data-content":data.desc});
+  } else {
+    var xmlhttp;
+    if (window.XMLHttpRequest) {
+      xmlhttp=new XMLHttpRequest();
+    } else {
+      xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.onreadystatechange = function() {
+      if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+        if (data.title.length > data.desc.length) {
+          title = data.desc;
+          desc = data.title;
+        } else {
+          title = data.title;
+          desc = data.desc;
+        }
+  	$("#note").attr({"title":"Bing今日壁纸："+data.title,"data-content":data.desc});
+
+        localStorage.setItem('bing_title', title);
+        localStorage.setItem('bing_desc', desc);
+        localStorage.setItem('bing_date', new Date().getDate());
+      }
+    }
+    xmlhttp.open("GET","http://smallest.com.cn/api/bing.php",true);
+    xmlhttp.send();
+  }
+}
+load_bing();
 </script>
 </body>
 </html>
