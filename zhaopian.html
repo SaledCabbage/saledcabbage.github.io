@@ -69,43 +69,45 @@ margin-right: auto;">
 	$('input#color').minicolors({defaultValue:'#eb0028',inline:false,control:"wheel",position:'center left',theme:'bootstrap'});
 	$(function(){$("[data-toggle='popover']").popover();});
 	//必应壁纸设置
-	function load_bing() {
-  var data = {
-    title  : localStorage.getItem('bing_title') ? localStorage.getItem('bing_title') : '',
-    desc : localStorage.getItem('bing_desc') ? localStorage.getItem('bing_desc') : '',
-    date : localStorage.getItem('bing_date') ? localStorage.getItem('bing_date') : ''
-  };
+	function load_desc() {
+	var data = {
+	title  : localStorage.getItem('bing_title') ? localStorage.getItem('bing_title') : '',
+	desc : localStorage.getItem('bing_desc') ? localStorage.getItem('bing_desc') : '',
+	date : localStorage.getItem('bing_date') ? localStorage.getItem('bing_date') : ''
+	};
 
-  if (new Date().getDate() == data.date & data.title != '' & data.desc != '') {
-  	$("#note").attr({"title":"Bing今日壁纸："+data.title,"data-content":data.desc});
-  } else {
-    var xmlhttp;
-    if (window.XMLHttpRequest) {
-      xmlhttp=new XMLHttpRequest();
-    } else {
-      xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-    }
-    xmlhttp.onreadystatechange = function() {
-      if (xmlhttp.readyState==4 && xmlhttp.status==200) {
-        if (data.title.length > data.desc.length) {
-          title = data.desc;
-          desc = data.title;
-        } else {
-          title = data.title;
-          desc = data.desc;
-        }
-  	$("#note").attr({"title":"Bing今日壁纸："+data.title,"data-content":data.desc});
+	if (new Date().getDate() == data.date & data.title != '' & data.desc != '') {
+	$("#note").attr({"title":"Bing今日壁纸："+data.title,"data-content":data.desc});
+	}
+	else{
+		var xmlhttp;
+		if (window.XMLHttpRequest) {
+		xmlhttp=new XMLHttpRequest();
+		} else {
+		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+		}
+		xmlhttp.onreadystatechange = function() {
+		if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+			var data = JSON.parse(xmlhttp.responseText);
+			if (data.title.length > data.desc.length) {
+				title = data.desc;
+				desc = data.title;
+			} else {
+				title = data.title;
+				desc = data.desc;
+				}
+  		$("#note").attr({"title":"Bing今日壁纸："+data.title,"data-content":data.desc});
 
-        localStorage.setItem('bing_title', title);
-        localStorage.setItem('bing_desc', desc);
-        localStorage.setItem('bing_date', new Date().getDate());
-      }
-    }
-    xmlhttp.open("GET","http://smallest.com.cn/api/bing.php",true);
-    xmlhttp.send();
+		localStorage.setItem('bing_title', title);
+		localStorage.setItem('bing_desc', desc);
+		localStorage.setItem('bing_date', new Date().getDate());
+		}
+    	}
+    	xmlhttp.open("GET","http://smallest.com.cn/api/bing.php",true);
+    	xmlhttp.send();
   }
 }
-load_bing();
+load_desc();
 </script>
 </body>
 </html>
