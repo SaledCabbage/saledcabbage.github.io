@@ -1,7 +1,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>照片修改工具 V1.2.4</title>
+<title>照片修改工具 V1.2.5</title>
 <meta name="robots" content="nofollow" />
 <link href="http://cdn.bootcss.com/jquery-minicolors/2.2.4/jquery.minicolors.min.css" rel="stylesheet">
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -17,7 +17,6 @@
 <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 
 <!-- 添加一下一言-ヒトコト(hitoloto.us)小工具 -->
-<script type="text/javascript" src="http://api.hitokoto.us/rand?encode=js&charset=utf-8"></script>
 <style>
 	*,html,h1,h2,h3,h4,div,span,p,input,label{
 		font-family: Arial,"微软雅黑","Microsoft-YaHei","黑体";
@@ -30,16 +29,22 @@
 		padding:40px;
 		background: url('http://zhangzifan.com/bing') center center no-repeat;
 	}
+	.source:before{
+		content:'\2014 \00A0' ;
+	}
 	@media (min-width: 768px) {
 		#pannel2{
 			height: 218px;
+		}
+		.source{
+		padding-top: 20px;
 		}	
 	}
 </style>
 </head>
 <body>
 <header>
-<h2 class="text-center">照片修改工具 V1.2.4</h2>
+<h2 class="text-center">照片修改工具 V1.2.5</h2>
 </header>
 <div class="container-fluid">
 	<div class="row">
@@ -73,7 +78,15 @@
 				<div class="form-group alert alert-dismissible bg-success" id="pannel2">
 					<button type="button" class="close visible-xs-block" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 					<h4>一言-ヒトコト</h4>
-					<script type="text/javascript">hitokoto();</script>
+					<script type="text/javascript">
+						// 一言留言板展示脚本
+						function hitokoto(hitokoto){
+							var content_data = null;
+							content_data ="<p class=\"text-left\">" + hitokoto.hitokoto +"<\/p><p class=\"source text-right\">" + hitokoto.source + "<\/p>";
+							document.write(content_data);
+						}
+					</script>
+					<script type="text/javascript" src="http://api.hitokoto.us/rand?encode=jsc">;</script>
 				</div>
 			</div>
 		</div>
