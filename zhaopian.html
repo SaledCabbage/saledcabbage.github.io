@@ -34,7 +34,7 @@
 </head>
 <body>
 <header>
-<h2 class="text-center">照片修改工具 V1.2.1</h2>
+<h2 class="text-center">照片修改工具 V1.2.4</h2>
 </header>
 <div class="container-fluid">
 	<div class="row">
@@ -104,7 +104,7 @@ margin-right: auto;">
 				title = data.title;
 				desc = data.desc;
 				}
-  		$("#note").attr({"title":"Bing今日壁纸："+data.title,"data-content":data.desc});
+  		$("#note").attr({"title":"Bing今日壁纸："+ title,"data-content":desc,"data-original-title":"Bing今日壁纸："+ data.title});
 
 		localStorage.setItem('bing_title', title);
 		localStorage.setItem('bing_desc', desc);
