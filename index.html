@@ -74,13 +74,17 @@
 	    <div class="modal-content">
 	      <div class="modal-header">
 	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	        <h4 class="modal-title">&nbsp;<!-- 悄悄告诉你 --></h4>
+	        <h4 class="modal-title">甜甜的话对你讲</h4>
 	      </div>
 	      <div class="modal-body">
-	        <p>风带着秘密吹过一整片森林 于是每一棵树都知道 我只喜欢你 </p>
+	        <!-- <p>风带着秘密吹过一整片森林 于是每一棵树都知道 我只喜欢你 </p> -->
+			<!-- 16:9 aspect ratio -->
+			<div class="embed-responsive embed-responsive-16by9">
+			  <iframe class="embed-responsive-item" src="https://chp.shadiao.app/api.php?from_shortcuts"></iframe>
+			</div>
 	      </div>
 	      <div class="modal-footer">
-	        <button type="button" class="btn btn-success" data-dismiss="modal">知道了</button>
+	        <button type="button" class="btn btn-success" data-dismiss="modal">听到了</button>
 	    </div><!-- /.modal-content -->
 	  </div><!-- /.modal-dialog -->
 	</div><!-- /.modal -->
@@ -93,6 +97,14 @@
 		function opentips(){
 			$("#myModal").modal('show');
 		}
+		$("#myModal").on('show.bs.modal',function(event){
+			let text = "门前大树下，路过一群鸭。";
+			//加入彩虹屁
+			var url = "https://chp.shadiao.app";
+			//控制内容显示
+			var modal = $(this);
+			modal.find('.modal-body p').text(text)
+		})
 	</script>
 	<div class="hidden">
 		<script src="https://s95.cnzz.com/z_stat.php?id=1254462802&web_id=1254462802" language="JavaScript"></script>
