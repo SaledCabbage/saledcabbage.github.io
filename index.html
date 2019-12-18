@@ -2,69 +2,98 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<title>世界上最美的女人，是她</title>
+	<title>世界上最美的女人，是她，但是她不喜欢我 ಥ_ಥ </title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="keywords" content="礼物,惊喜,有趣,最美" />
 	<meta name="description" content="世界上最美的女人，是她，但是她不喜欢我 ಥ_ಥ " />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
 	<link href="css/ohmygod.css" rel="stylesheet" type="text/css"/>
+	<link href="https://cdn.bootcss.com/bootstrap-modal/2.2.6/css/bootstrap-modal.min.css" rel="stylesheet">
+	<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdn.bootcss.com/bootstrap-modal/2.2.6/js/bootstrap-modal.min.js"></script>
+	<script src="https://cdn.bootcss.com/bootstrap-modal/2.2.6/js/bootstrap-modalmanager.min.js"></script>
 
 </head>
 <body>
 	<div class="container">
 		<div class="row gallery">
 			<div class="col-xs-4 col-md-4">
-				<a href="javascript:void(0);">
+				<a href="javascript:opentips();">
 					<img src="img/1.jpg" alt="..." class="img-responsive center-block">
 				</a>
 			</div>
 			<div class="col-xs-4 col-md-4">
-				<a href="javascript:void(0);">
+				<a href="javascript:opentips();">
 					<img src="img/2.jpg" alt="..." class="img-responsive center-block">
 				</a>
 			</div>
 			<div class="col-xs-4 col-md-4">
-				<a href="javascript:void(0);">
+				<a href="javascript:opentips();">
 					<img src="img/3.jpg" alt="..." class="img-responsive center-block">
 				</a>
 			</div>
 		</div>
 		<div class="row gallery">
 			<div class="col-xs-4 col-md-4">
-				<a href="javascript:void(0);">
+				<a href="javascript:opentips();">
 					<img src="img/4.jpg" alt="..." class="img-responsive center-block">
 				</a>
 			</div>
 			<div class="col-xs-4 col-md-4">
-				<a href="/love">
+				<a href="./love">
 					<img src="img/5.jpg" alt="..." class="img-responsive center-block">
 				</a>
 			</div>
 			<div class="col-xs-4 col-md-4">
-				<a href="javascript:void(0);">
+				<a href="javascript:opentips();">
 					<img src="img/6.jpg" alt="..." class="img-responsive center-block">
 				</a>
 			</div>
 		</div>
 		<div class="row gallery">
 			<div class="col-xs-4 col-md-4">
-				<a href="javascript:void(0);">
+				<a href="javascript:opentips();">
 					<img src="img/7.jpg" alt="..." class="img-responsive center-block">
 				</a>
 			</div>
 			<div class="col-xs-4 col-md-4">
-				<a href="javascript:void(0);">
+				<a href="javascript:opentips()">
 					<img src="img/8.jpg" alt="..." class="img-responsive center-block">
 				</a>
 			</div>
 			<div class="col-xs-4 col-md-4">
-				<a href="javascript:void(0);">
+				<a href="javascript:opentips();">
 					<img src="img/9.jpg" alt="..." class="img-responsive center-block">
 				</a>
 			</div>
 		</div>
 	</div>
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title">&nbsp;<!-- 悄悄告诉你 --></h4>
+	      </div>
+	      <div class="modal-body">
+	        <p>风带着秘密吹过一整片森林 于是每一棵树都知道 我只喜欢你 </p>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-success" data-dismiss="modal">知道了</button>
+	    </div><!-- /.modal-content -->
+	  </div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+	<script type="text/javascript">
+		// $("#myModal").modal({
+		// 					backdrop:true,
+		// 					keyboard:true,
+		// 					show:false
+		// 				});
+		function opentips(){
+			$("#myModal").modal('show');
+		}
+	</script>
 	<div class="hidden">
 		<script src="https://s95.cnzz.com/z_stat.php?id=1254462802&web_id=1254462802" language="JavaScript"></script>
 	</div>
