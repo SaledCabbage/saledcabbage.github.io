@@ -77,11 +77,11 @@
 	        <h4 class="modal-title">甜甜的话对你讲</h4>
 	      </div>
 	      <div class="modal-body">
-	        <!-- <p>风带着秘密吹过一整片森林 于是每一棵树都知道 我只喜欢你 </p> -->
+	        <p class="text-center">风带着秘密吹过一整片森林 于是每一棵树都知道 我只喜欢你 </p>
 			<!-- 16:9 aspect ratio -->
-			<div class="embed-responsive embed-responsive-16by9">
+			<!-- <div class="embed-responsive embed-responsive-16by9">
 			  <iframe class="embed-responsive-item" src="https://chp.shadiao.app/api.php?from_shortcuts"></iframe>
-			</div>
+			</div> -->
 	      </div>
 	      <div class="modal-footer">
 	        <button type="button" class="btn btn-success" data-dismiss="modal">听到了</button>
@@ -95,16 +95,14 @@
 		// 					show:false
 		// 				});
 		function opentips(){
-			$("#myModal").modal('show');
-		}
-		$("#myModal").on('show.bs.modal',function(event){
-			let text = "门前大树下，路过一群鸭。";
 			//加入彩虹屁
-			var url = "https://chp.shadiao.app";
-			//控制内容显示
-			var modal = $(this);
-			modal.find('.modal-body p').text(text)
-		})
+			var modal = $("#myModal");
+			var url = "https://api.smallest.com.cn/love/chp.php";
+			$.get(url,function(rsp){
+				console.log(rsp);
+				modal.find('.modal-body p').text(rsp);
+			}).then(()=>{$("#myModal").modal('show');});
+		}
 	</script>
 	<div class="hidden">
 		<script src="https://s95.cnzz.com/z_stat.php?id=1254462802&web_id=1254462802" language="JavaScript"></script>

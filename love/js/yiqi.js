@@ -24,10 +24,28 @@ window.onload=function(){
 		   		alert("工资全上交");
 		  		Dianji=1;
 	  }
+	  let data = {
+	  	TA_action_on : 0,//为1时显示交互面板
+	  	TA_title : "Ta不同意",//下行消息标题
+	  	TA_content : "Ta不同意,要不你再努努力?",//下行消息内容，支持Markdown语法
+	  }
+	  $.post("../ftqq.php",data,function(rsp){
+	  });
 
 	}
 	hao.onclick=function(){
-		alert("小姐姐终于同意了，我爱你");
+		/* **方糖推送信息
+		* 
+		 */
+		let data = {
+			TA_action_on : 0,//为1时显示交互面板
+			TA_title : "Ta答应你了",//下行消息标题
+			TA_content : "恭喜!Ta在你发给Ta的页面答应了你,你们可能要在一起了~",//下行消息内容，支持Markdown语法
+		}
+		$.post("../ftqq.php",data,function(rsp){
+			alert("小姐姐终于同意了，我爱你");
+		});
+		
 	}
 	
 
